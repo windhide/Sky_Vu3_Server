@@ -1,0 +1,40 @@
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    platform: mysql
+    url: jdbc:mysql://127.0.0.1:3306/sky_strategy?useSSL=false&useUnicode=true&characterEncoding=utf-8&useLegacyDatetimeCode=false&allowPublicKeyRetrieval=true&serverTimezone=Asia/Shanghai
+    username: root
+    password: "root"
+    initialSize: 5
+    minIdle: 5
+    maxActive: 20
+    maxWait: 60000
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: SELECT1FROMDUAL
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    filters: stat,wall,log4j
+    logSlowSql: true
+  redis:
+    host: 127.0.0.1
+  servlet:
+    multipart:
+       enabled: true  # 启用
+       max-file-size: 30MB # 上传文件单个限制
+       max-request-size: 60MB # 总限制
+  web:
+    resources:
+      static-locations: file:W:/Sky_Strategy_Image
+logging:
+  level:
+    com.skys.Mapper: trace
+
+
+mybatis-plus:
+  global-config:
+    banner: false
+
+
