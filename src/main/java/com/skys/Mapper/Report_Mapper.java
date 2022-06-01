@@ -18,6 +18,6 @@ public interface Report_Mapper extends BaseMapper<Report> {
     @Update("update report set reportListTitle=#{reportListTitle},reportListimage=#{reportListimage},reportListMesseage=#{reportListMesseage},accountID=#{accountID},reportTime=#{reportTime} where reportListID=#{reportListID}")
     boolean updateReport(Report report);
 
-    @Insert("insert into report values(null,#{reportListTitle},#{reportListimage},#{reportListMesseage},#{accountID},#{reportTime}")
+    @Insert("insert into report values(null,#{reportListTitle},#{reportListimage},#{reportListMesseage},(select accountID from account where accountUsername = #{accountUsername}),#{reportTime})")
     boolean insertReport(Report report);
 }

@@ -39,7 +39,6 @@ public class CrossConfig implements WebMvcConfigurer {
         //排除拦截，除了注册登陆(此时还没token)，其余都拦截
         excludePath.add("/upload");      //上传图片
         excludePath.add("/uploadDelete");// 删除图片
-
         excludePath.add("/item");
         excludePath.add("/itemType");
         excludePath.add("/MaxMap");
@@ -49,7 +48,6 @@ public class CrossConfig implements WebMvcConfigurer {
         excludePath.add("/SeasonOrActivity");
         excludePath.add("/sprit");
         excludePath.add("/account");
-
         excludePath.add("/item/**");
         excludePath.add("/itemType/**");
         excludePath.add("/MaxMap/**");
@@ -60,7 +58,6 @@ public class CrossConfig implements WebMvcConfigurer {
         excludePath.add("/sprit/**");
         excludePath.add("/account/**");
         excludePath.add("/talkMesseage/select");
-
         excludePath.add("/image/**");  //静态资源
         excludePath.add("/css/**");  //静态资源
         excludePath.add("/cost/**");  //静态资源

@@ -24,7 +24,7 @@ public class Item_Service {
 
 
     int AllPage = 0;
-    int ListCount = 21;
+    int ListCount = 24;
 
 
     public List<Item> selectAllItem() {

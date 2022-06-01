@@ -24,7 +24,7 @@ public class Sprit_Service {
 
 
     int AllPage = 0;
-    int ListCount = 15;
+    int ListCount = 18;
     boolean lock = false;
     public List<Sprit> SelectAllSprit() {
         List<Sprit> list = sm.SelectAllSprit();

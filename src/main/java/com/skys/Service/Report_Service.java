@@ -17,7 +17,7 @@ public class Report_Service {
         return rm.selectAllReport();
     }
 
-    public boolean insertReport(Report report) {return rm.insertReport(report); }
+    public boolean insertReport(Report report) {return rm.insertReport(report);}
 
     public boolean updateReport(Report report) {return rm.updateReport(report); }
 
