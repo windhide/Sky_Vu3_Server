@@ -21,5 +21,5 @@ public class Report_Service {
 
     public boolean updateReport(Report report) {return rm.updateReport(report); }
 
-    public boolean deleteReport(int id) {return rm.deleteById(id)>1?true:false;}
+    public boolean deleteReport(int id) {return rm.deleteById(id)!=0?true:false;}
 }
