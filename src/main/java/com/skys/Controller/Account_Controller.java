@@ -7,6 +7,7 @@ import com.skys.Entity.Account;
 import com.skys.Service.Account_Service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -14,12 +15,13 @@ import java.util.HashMap;
 
 @Controller
 @RestController
+@RequestMapping("/account")
 public class Account_Controller {
 
     @Autowired
     Account_Service as;
 
-    @RequestMapping("/account/Login")
+    @RequestMapping("/Login")
     public String selectAccountForLogin(String username,String password)throws JsonProcessingException {
             ObjectMapper objectMapper=new ObjectMapper();
             HashMap<String,Object> hs=new HashMap<>();
@@ -36,15 +38,15 @@ public class Account_Controller {
             return objectMapper.writeValueAsString(hs);
     }
 
-    @RequestMapping("/account/Register")
+    @RequestMapping("/Register")
     public boolean registerAccount(String username,String password){
         return as.register(username,password);
     }
 
-    @RequestMapping("/account/Check")
+    @RequestMapping("/Check")
     public boolean boforeRegisterCheck(String username){ return as.beforeRegisterCheck(username);}
 
-    @RequestMapping("/account/findID")
+    @RequestMapping("/findID")
     public String accountFindID(String username){return as.accountFindID(username);}
 
 }

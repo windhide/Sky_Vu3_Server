@@ -4,6 +4,7 @@ import com.skys.Entity.Sprit;
 import com.skys.Service.Sprit_Service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -11,33 +12,34 @@ import java.util.List;
 
 @Controller
 @RestController
+@RequestMapping("/sprit")
 public class Sprit_Controller {
 
     @Autowired
     Sprit_Service ss;
 
-    @RequestMapping("/sprit")
+    @RequestMapping("/select")
     public List<Sprit> selectBySpritsPage(int id) {
         return ss.selectBySpritsPage(id);
     }
 
-    @RequestMapping("/sprit/sreach")
+    @RequestMapping("/sreach")
     public List<Sprit> SelectSprit(String sereachData,String SeasonName,String MaxmapName) {
         return ss.SelectSprit(sereachData,SeasonName,MaxmapName);
     }
 
-    @RequestMapping("/sprit/SpritPage")
+    @RequestMapping("/SpritPage")
     public int SelectSpritPage(){
         return ss.SelectSpritPage();
     }
 
-    @RequestMapping("/sprit/delete")
+    @RequestMapping("/delete")
     public boolean DeleteSprit(int id){return ss.DeleteSprit(id);}
 
-    @RequestMapping("/sprit/insert")
+    @RequestMapping("/insert")
     public boolean insertSprit(Sprit sprit){return ss.insertSprit(sprit);}
 
-    @RequestMapping("/sprit/update")
+    @RequestMapping("/update")
     public boolean updateSprit(Sprit sprit){return ss.updateSprit(sprit);}
 
 }

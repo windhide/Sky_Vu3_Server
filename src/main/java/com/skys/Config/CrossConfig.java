@@ -44,6 +44,8 @@ public class CrossConfig implements WebMvcConfigurer {
         excludePath.add("/MaxMap");
         excludePath.add("/MiniMap");
         excludePath.add("/report");
+        excludePath.add("/activity");
+        excludePath.add("/activity/**");
         //excludePath.add("/reprint");
         excludePath.add("/SeasonOrActivity");
         excludePath.add("/sprit");
