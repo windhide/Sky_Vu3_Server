@@ -11,11 +11,14 @@ import java.util.List;
 @Service
 public class MiniMapService {
 
-    @Autowired
-    MiniMapMapper miniMapMapper;
+    private MiniMapMapper miniMapMapper;
+    private MaxMapService maxMapService;
 
     @Autowired
-    MaxMapService maxMapService;
+    public MiniMapService(MiniMapMapper miniMapMapper, MaxMapService maxMapService) {
+        this.miniMapMapper = miniMapMapper;
+        this.maxMapService = maxMapService;
+    }
 
     public List<MiniMap> selectAllMiniMap() {
         List<MiniMap> list = miniMapMapper.selectAllMiniMap();

@@ -10,11 +10,15 @@ import java.util.List;
 @Service
 public class ItemTypeService {
 
+    private ItemTypeMapper itemTypeMapper;
+
     @Autowired
-    ItemTypeMapper itm;
+    public ItemTypeService(ItemTypeMapper itemTypeMapper) {
+        this.itemTypeMapper = itemTypeMapper;
+    }
 
     public List<ItemType> selectAllItemType(){
-        return itm.selectAllItemType();
+        return itemTypeMapper.selectAllItemType();
     }
 
 }

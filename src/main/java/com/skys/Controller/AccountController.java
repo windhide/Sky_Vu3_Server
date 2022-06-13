@@ -6,19 +6,22 @@ import com.skys.Config.TokenUtil;
 import com.skys.Entity.Account;
 import com.skys.Service.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.HashMap;
 
-@Controller
 @RestController
 @RequestMapping("/account")
 public class AccountController {
 
+
+    private AccountService accountService;
+
     @Autowired
-    AccountService accountService;
+    public AccountController(AccountService accountService) {
+        this.accountService = accountService;
+    }
 
     @RequestMapping("/Login")
     public String selectAccountForLogin(String username,String password)throws JsonProcessingException {

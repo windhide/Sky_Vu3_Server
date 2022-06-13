@@ -13,19 +13,23 @@ import java.util.List;
 
 @Service
 public class SpritService {
-    @Autowired
-    SpritMapper spritMapper;
-    @Autowired
-    SeasonOrActivityService seasonOrActivityService;
-    @Autowired
-    MiniMapService miniMapService;
-
-    UploadController uc = new UploadController();
-
-
-    int AllPage = 0;
-    int ListCount = 18;
+    private SpritMapper spritMapper;
+    private SeasonOrActivityService seasonOrActivityService;
+    private MiniMapService miniMapService;
+    private UploadController uc;
+    Integer AllPage = 0;
+    Integer ListCount = 18;
     boolean lock = false;
+
+    @Autowired
+    public SpritService(SpritMapper spritMapper, SeasonOrActivityService seasonOrActivityService, MiniMapService miniMapService, UploadController uc) {
+        this.spritMapper = spritMapper;
+        this.seasonOrActivityService = seasonOrActivityService;
+        this.miniMapService = miniMapService;
+        this.uc = uc;
+    }
+
+
     public List<Sprit> SelectAllSprit() {
         List<Sprit> list = spritMapper.SelectAllSprit();
         List<MiniMap> miniList = miniMapService.selectAllMiniMap();

@@ -3,19 +3,21 @@ package com.skys.Controller;
 import com.skys.Entity.TalkMesseage;
 import com.skys.Service.TalkMesseageService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@Controller
 @RestController
 @RequestMapping("/talkMesseage")
 public class TalkMesseageController {
 
+    private TalkMesseageService talkMesseageService;
+
     @Autowired
-    TalkMesseageService talkMesseageService;
+    public TalkMesseageController(TalkMesseageService talkMesseageService) {
+        this.talkMesseageService = talkMesseageService;
+    }
 
     @RequestMapping("/select")
     public List<TalkMesseage> talkMesseageSelect(){

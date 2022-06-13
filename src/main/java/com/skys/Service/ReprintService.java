@@ -11,11 +11,14 @@ import java.util.List;
 @Service
 public class ReprintService {
 
-    @Autowired
-    ReprintMapper reprintMapper;
-    @Autowired
-    SpritService spritService;
+    private ReprintMapper reprintMapper;
+    private SpritService spritService;
 
+    @Autowired
+    public ReprintService(ReprintMapper reprintMapper, SpritService spritService) {
+        this.reprintMapper = reprintMapper;
+        this.spritService = spritService;
+    }
 
     public List<Reprint> getAllReprint() {
         List<Reprint> ReprintList = reprintMapper.getAllReprint();

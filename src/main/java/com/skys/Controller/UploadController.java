@@ -17,8 +17,14 @@ import java.util.Map;
 public class UploadController {
     private static final Logger LOGGER = LoggerFactory.getLogger(UploadController.class) ;
     private final String filePath = "W:/Sky_Strategy_Image/image/"; // 定义文件输出的地方
-    @Autowired
-    UploadService uploadService;
+
+    private UploadService uploadService;
+
+    @Autowired 
+    public UploadController(UploadService uploadService) {
+        this.uploadService = uploadService;
+    }
+
     /**
      * 文件上传
      */

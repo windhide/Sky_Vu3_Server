@@ -3,19 +3,22 @@ package com.skys.Controller;
 import com.skys.Entity.SeasonOrActivity;
 import com.skys.Service.SeasonOrActivityService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@Controller
 @RestController
 @RequestMapping("/SeasonOrActivity")
 public class SeasonOrActivityController {
 
+
+    private SeasonOrActivityService seasonOrActivityService;
+
     @Autowired
-    SeasonOrActivityService seasonOrActivityService;
+    public SeasonOrActivityController(SeasonOrActivityService seasonOrActivityService) {
+        this.seasonOrActivityService = seasonOrActivityService;
+    }
 
     @RequestMapping("/select")
     public List<SeasonOrActivity> selectSeasonOrActivity(){return seasonOrActivityService.selectAllSeasonOrActivity();}

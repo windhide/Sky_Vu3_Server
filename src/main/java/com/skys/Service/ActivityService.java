@@ -10,8 +10,12 @@ import java.util.List;
 @Service
 public class ActivityService {
 
+    private ActivityMapper activityMapper;
+
     @Autowired
-    ActivityMapper activityMapper;
+    public ActivityService(ActivityMapper activityMapper) {
+        this.activityMapper = activityMapper;
+    }
 
     public List<Activity> selectActivity(){
         return activityMapper.selectActivity();

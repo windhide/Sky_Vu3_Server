@@ -6,9 +6,12 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class AccountService {
+    private AccountMapper accountMapper;
 
     @Autowired
-    AccountMapper accountMapper;
+    public AccountService(AccountMapper accountMapper) {
+        this.accountMapper = accountMapper;
+    }
 
     public boolean login(String username,String password){return accountMapper.selectAccountForLogin(username,password);}
 

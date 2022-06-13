@@ -10,8 +10,13 @@ import java.util.List;
 @Service
 public class ReportService {
 
+
+    private ReportMapper reportMapper;
+
     @Autowired
-    ReportMapper reportMapper;
+    public ReportService(ReportMapper reportMapper) {
+        this.reportMapper = reportMapper;
+    }
 
     public List<Report> selectAllReport(){
         return reportMapper.selectAllReport();

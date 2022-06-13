@@ -12,11 +12,14 @@ import java.util.List;
 @Service
 public class TalkMesseageService {
 
-    @Autowired
     private TalkMesseageMapper talkMesseageMapper;
-    @Autowired
     private AccountMapper accountMapper;
 
+    @Autowired
+    public TalkMesseageService(TalkMesseageMapper talkMesseageMapper, AccountMapper accountMapper) {
+        this.talkMesseageMapper = talkMesseageMapper;
+        this.accountMapper = accountMapper;
+    }
 
     public List<TalkMesseage> selectTalkMesseage(){
         List<TalkMesseage> list1 = talkMesseageMapper.selectTalkMesseage();

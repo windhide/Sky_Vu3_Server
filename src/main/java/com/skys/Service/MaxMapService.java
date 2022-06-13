@@ -10,8 +10,13 @@ import java.util.List;
 @Service
 public class MaxMapService {
 
+
+    private MaxMapMapper maxMapMapper;
+
     @Autowired
-    MaxMapMapper maxMapMapper;
+    public MaxMapService(MaxMapMapper maxMapMapper) {
+        this.maxMapMapper = maxMapMapper;
+    }
 
     public List<MaxMap> selectAllMaxMap(){
         return maxMapMapper.selectAllMaxMap();

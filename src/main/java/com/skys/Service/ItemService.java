@@ -14,17 +14,22 @@ import java.util.List;
 @Service
 public class ItemService {
 
-    @Autowired
-    ItemMapper itemMapper;
-    @Autowired
-    SpritService spritService;
-    @Autowired
-    ItemTypeService itemTypeService;
-    UploadController uploadController = new UploadController();
 
+    private ItemMapper itemMapper;
+    private SpritService spritService;
+    private ItemTypeService itemTypeService;
+    private UploadController uploadController;
+    Integer AllPage = 0;
+    Integer ListCount = 24;
 
-    int AllPage = 0;
-    int ListCount = 24;
+    @Autowired
+    public ItemService(ItemMapper itemMapper, SpritService spritService, ItemTypeService itemTypeService, UploadController uploadController) {
+        this.itemMapper = itemMapper;
+        this.spritService = spritService;
+        this.itemTypeService = itemTypeService;
+        this.uploadController = uploadController;
+    }
+
 
 
     public List<Item> selectAllItem() {

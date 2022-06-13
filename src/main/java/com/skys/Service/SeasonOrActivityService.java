@@ -11,9 +11,12 @@ import java.util.List;
 @Service
 public class SeasonOrActivityService {
 
-    @Autowired
-    SeasonOrActivityMapper seasonOrActivityMapper;
+    private SeasonOrActivityMapper seasonOrActivityMapper;
 
+    @Autowired
+    public SeasonOrActivityService(SeasonOrActivityMapper seasonOrActivityMapper) {
+        this.seasonOrActivityMapper = seasonOrActivityMapper;
+    }
 
     public List<SeasonOrActivity> selectAllSeasonOrActivity() {
         return seasonOrActivityMapper.selectAllSeasonOrActivity();
