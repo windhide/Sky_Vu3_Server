@@ -17,17 +17,7 @@ public class SeasonOrActivity {
     private String srName;
     private String srStartTime;
     private String srEndTime;
-    private boolean isSeason;
+    private boolean srIsSeason;
 
-    public boolean getisSeason() {
-        return isSeason;
-    }
-    public void setSeason(boolean season) {
-        isSeason = season;
-    }
-
-    public String getSrName() {
-        return srName;
-    }
 
 }

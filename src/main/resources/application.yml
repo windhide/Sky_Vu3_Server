@@ -30,11 +30,13 @@ spring:
       static-locations: file:W:/Sky_Strategy_Image
 logging:
   level:
-    com.skys.Mapper: trace
+    com.skys.mapper: trace
 
 
 mybatis-plus:
   global-config:
     banner: false
+  configuration:
+    map-underscore-to-camel-case: false
 
 
