@@ -1,7 +1,8 @@
-package com.skys.service;
+package com.skys.service.Imp;
 
 import com.skys.mapper.ItemTypeMapper;
 import com.skys.pojo.ItemType;
+import com.skys.service.ItemTypeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

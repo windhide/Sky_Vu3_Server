@@ -1,7 +1,8 @@
-package com.skys.service;
+package com.skys.service.Imp;
 
 import com.skys.mapper.MaxMapMapper;
 import com.skys.pojo.MaxMap;
+import com.skys.service.MaxMapService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -21,8 +22,6 @@ public class MaxMapServiceImp implements MaxMapService {
     public List<MaxMap> selectAllMaxMap() {
         return maxMapMapper.selectAllMaxMap();
     }
-
-    ;
 
 
 }

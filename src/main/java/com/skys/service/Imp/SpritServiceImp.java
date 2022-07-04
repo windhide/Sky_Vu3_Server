@@ -1,10 +1,13 @@
-package com.skys.service;
+package com.skys.service.Imp;
 
 import com.skys.controller.UploadController;
 import com.skys.mapper.SpritMapper;
 import com.skys.pojo.MiniMap;
 import com.skys.pojo.SeasonOrActivity;
 import com.skys.pojo.Sprit;
+import com.skys.service.MiniMapService;
+import com.skys.service.SeasonOrActivityService;
+import com.skys.service.SpritService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

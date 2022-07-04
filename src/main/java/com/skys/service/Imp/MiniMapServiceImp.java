@@ -1,8 +1,10 @@
-package com.skys.service;
+package com.skys.service.Imp;
 
 import com.skys.mapper.MiniMapMapper;
 import com.skys.pojo.MaxMap;
 import com.skys.pojo.MiniMap;
+import com.skys.service.MaxMapService;
+import com.skys.service.MiniMapService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

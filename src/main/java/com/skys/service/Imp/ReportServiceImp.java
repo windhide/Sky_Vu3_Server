@@ -1,7 +1,8 @@
-package com.skys.service;
+package com.skys.service.Imp;
 
 import com.skys.mapper.ReportMapper;
 import com.skys.pojo.Report;
+import com.skys.service.ReportService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

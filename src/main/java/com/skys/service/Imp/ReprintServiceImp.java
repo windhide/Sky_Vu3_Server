@@ -1,8 +1,10 @@
-package com.skys.service;
+package com.skys.service.Imp;
 
 import com.skys.mapper.ReprintMapper;
 import com.skys.pojo.Reprint;
 import com.skys.pojo.Sprit;
+import com.skys.service.ReprintService;
+import com.skys.service.SpritService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
