@@ -59,13 +59,13 @@ public class TokenUtil {
                         Long oldTime = Long.parseLong(onlineCountMap.get(username).split("-Time:")[1]);
                             onlineCountMap.put(keys,token + "-Time:"+new Date().getTime());
                             System.out.println("时间重置==============重置前剩余"+(new Date().getTime() - oldTime)/1000+"秒");
-                            System.out.println("当前在线人数"+getOnlineCount());
+                            System.out.println("当前在线人数"+getLoginCount());
                         break;
                     }
                 }
             }else{
                 onlineCountMap.put(username,token + "-Time:"+new Date().getTime());
-                System.out.println("当前在线人数"+getOnlineCount());
+                System.out.println("当前登录人数"+getLoginCount());
             }
             return true;
         } catch (Exception e){
@@ -76,10 +76,10 @@ public class TokenUtil {
 
     /**
      *
-     * 在线人数统计
-     * 60000 == 60s
+     * 登陆人数统计
+     *
      */
-    public static Integer getOnlineCount(){
+    public static Integer getLoginCount(){
         for(String keys : onlineCountMap.keySet()){
             Long oldTime = Long.parseLong(onlineCountMap.get(keys).split("-Time:")[1]);
             if((new Date().getTime() - oldTime) >= ONLINE_TIME){
@@ -87,5 +87,13 @@ public class TokenUtil {
             }
         }
         return onlineCountMap.size();
+    }
+
+    /**
+     * 在线人数统计
+     *
+     */
+    public static Integer getOnlineCount(){
+        return null;
     }
 }
