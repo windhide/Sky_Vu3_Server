@@ -27,7 +27,7 @@ spring:
        max-request-size: 60MB # 总限制
   web:
     resources:
-      static-locations: file:W:/Sky_Strategy_Image
+      static-locations: file:W:/Sky_Strategy_Image(Webp)
 logging:
   level:
     com.skys.mapper: trace
